@@ -1,4 +1,4 @@
 resource "local_file" "test" {
-  filename = "output.txt"
+  filename = "outputs.txt"
   content  = "CI/CD test successful!"
 }
