@@ -1,0 +1,24 @@
+name : Terraform apply
+on:
+ workflow_dispatch
+jobs:
+  deploy:
+   runs-on: ubuntu-latest
+   steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+    - name: Terraform Setup
+      uses: actions/setup-terraform@v2
+    - name: Terraform init
+      run: terraform init
+    - name: Terraform validate
+      run: terraform validate
+    - name: Terraform fmt
+      run: terraform fmt
+    - name: Terraform plan
+      run: terraform plan
+    - name: Terraform apply
+      run: terraform apply -auto-approve
+      
+   
+     
